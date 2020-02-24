@@ -5,11 +5,13 @@ def home(request):
     return render(request,'home.html')
 
 def cal(request):
-    x = 0
-    y = 0
+    result = 0
     if op == "+":
-        return x + y
+        result = x + y
     elif op == "-":
-        return x - y
-    elif op == "*"
-        return x
+        result = x - y
+    elif op == "*":
+        result = x * y
+    else:
+        result = x / y
+    return result
