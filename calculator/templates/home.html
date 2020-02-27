@@ -1,12 +1,25 @@
 {% load static %}
 <html>
+
 <head>
     Calculator
 </head>
+
 <body>
-    <p>X</p>
-    <input type="number" name="x" id="x">
-    <p>Y</p>
-    <input type="number" name="y" id="y">
+    <form action="{% url 'cal' %}"" method="post">
+        {% csrf_token %}
+        <p>X</p>
+        <input type="number" name="x" id="x">
+        <p>Y</p>
+        <input type="number" name="y" id="y"><br>
+
+        <input type="radio" name="add" id="add">ADD</input><br>
+        <input type="radio" name="minus" id="minus">MINUS</input><br>
+        <input type="radio" name="multiply" id="multiply">MULTIPLY</input><br>
+        <input type="radio" name="divide" id="divide">DIVIDE</input><br>
+
+        <input type="submit" value="CALCULATE">
+    </form>
 </body>
+
 </html>
