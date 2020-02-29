@@ -1,11 +1,16 @@
 from selenium import webdriver
+import time
 
 def test_user_can_checkout_homepage(self):
     browser = webdriver.Firefox()
     browser.get('http://localhost:8000')
+    time.sleep(30)
 
 
 def test_user_can_calculate_numbers(self):
+    browser = webdriver.Firefox()
+    browser.get('http://localhost:8000')
+    time.sleep(30)
     # Found x and y field
     variableX = self.browser.find_element_by_id('x')
     variableY = self.browser.find_element_by_id('y')
@@ -20,5 +25,8 @@ def test_user_can_calculate_numbers(self):
     self.assertTrue(button_divide)
     # Type value x=150.23, y=90 and click minus button
     variableX.send_keys('150.23')
+    time.sleep(10)
     variableX.send_keys('90')
+    time.sleep(10)
     button_minus.send_keys(Keys.ENTER)
+    time.sleep(30)
