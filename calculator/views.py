@@ -21,28 +21,19 @@ def divide(x,y):
     return x / y
 
 def cal(request):
-    # numCal = Operation()
-    # numCal.x = ClearStrSpace(request.POST['x'])
-    # numCal.y = ClearStrSpace(request.POST['y'])
-    # numCal.op = ClearStrSpace(request.POST['op'])
-    # numCal.save()
-
     if request.method == "POST":
         x = float(request.POST['x'])
         y = float(request.POST['y'])
-        op_add = request.POST['add']
-        # op_minus = request.POST['minus']
-        # op_multiply = request.POST['multiply']
-        # op_divide = request.POST['divide']
+        op = request.POST['op']
         result = 0
-        if op_add:
+        if op=='add':
             result = add(x,y)
-        elif op_minus:
+        elif op=='subtract':
             result = subtract(x,y)
-        elif op_multiply:
+        elif op=='multiply':
             result = multiply(x,y)
-        elif op_divide:
+        elif op=='divide':
             result = divide(x,y)
         # return HttpResponse(result)
-        return render(request,'calculator.html',{'result':result})
+        return render(request,'calPost.html',{'result':result})
 

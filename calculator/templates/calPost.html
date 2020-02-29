@@ -2,23 +2,25 @@
 <html>
 
 <head>
-    Calculator
+    <h1>Calculator</h1>
 </head>
 
 <body>
-    <form action="" method="post">
+    <form action="{% url 'cal' %}" method="post">
         {% csrf_token %}
         <p>X</p>
         <input type="number" name="x" id="x">
         <p>Y</p>
-        <input type="number" name="y" id="y"><br><br>
-        <button type="submit" name="add" value="">+</button>
-        <button type="submit" name="minus" value="">-</button>
-        <button type="submit" name="multiply" value="">*</button>
-        <button type="submit" name="divide" value="">/</button>
+        <input type="number" name="y" id="y">
+        <br><br>
+        <button type="submit" name="op" value="add">+</button>
+        <button type="submit" name="op" value="subtract">-</button>
+        <button type="submit" name="op" value="multiply">*</button>
+        <button type="submit" name="op" value="divide">/</button>
+        <br><br>
+        <span>Result:</span>
+        <span>{{result}}</span>
     </form>
-    <span>Result:</span>
-    <span>{{result}}</span>
 </body>
 
 </html>

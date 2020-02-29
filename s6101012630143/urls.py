@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^about.html', views.about, name='about'),
     url(r'^calPost.html', views.calPost, name='calPost'),
     url(r'^calGet.html', views.calGet, name='calGet'),
+    url(r'^cal', views.cal, name='cal'),
 ]
