@@ -1,13 +1,13 @@
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
-from .models import Operation
+# from .models import Operation
 
 def home(request):
     return render(request,'home.html')
-def calPost(request):
-    return render(request,'calPost.html')
-def calGet(request):
-    return render(request,'calGet.html')
+def calculatorPost(request):
+    return render(request,'calculatorPost.html')
+def calculatorGet(request):
+    return render(request,'calculatorGet.html')
 def about(request):
     return render(request,'about.html')
 
@@ -20,11 +20,11 @@ def multiply(x,y):
 def divide(x,y):
     return x / y
 
-def cal(request):
+def calPost(request):
     if request.method == "POST":
-        x = float(request.POST['x'])
-        y = float(request.POST['y'])
-        op = request.POST['op']
+        x = float(request.POST.get('x'))
+        y = float(request.POST.get('y'))
+        op = request.POST.get('op')
         result = 0
         if op=='add':
             result = add(x,y)
@@ -35,5 +35,5 @@ def cal(request):
         elif op=='divide':
             result = divide(x,y)
         # return HttpResponse(result)
-        return render(request,'calPost.html',{'result':result})
+        return render(request,'calculatorPost.html',{'result':result})
 

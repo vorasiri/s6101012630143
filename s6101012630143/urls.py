@@ -17,12 +17,14 @@ from django.conf.urls import url
 from django.contrib import admin
 
 from calculator import views
+from calculatorGet import views as viewsGet
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.home, name='home'),
     url(r'^about.html', views.about, name='about'),
-    url(r'^calPost.html', views.calPost, name='calPost'),
-    url(r'^calGet.html', views.calGet, name='calGet'),
-    url(r'^cal', views.cal, name='cal'),
+    url(r'^calculatorPost.html', views.calculatorPost, name='calculatorPost'),
+    url(r'^calculatorGet.html', views.calculatorGet, name='calculatorGet'),
+    url(r'^calPost', views.calPost, name='calPost'),
+    url(r'^calGet', viewsGet.calGet, name='calGet'),
 ]

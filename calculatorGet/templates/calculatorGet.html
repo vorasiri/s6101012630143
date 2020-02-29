@@ -1,0 +1,27 @@
+{% load static %}
+<html>
+
+<head>
+    <h1>Calculator</h1>
+    <h4>GET method</h4>
+</head>
+
+<body>
+    <form action="{% url 'calGet' %}" method="GET">
+        {% csrf_token %}
+        <p>X</p>
+        <input type="text" name="x" id="x">
+        <p>Y</p>
+        <input type="text" name="y" id="y">
+        <br><br>
+        <button type="submit" name="op" value="add">+</button>
+        <button type="submit" name="op" value="subtract">-</button>
+        <button type="submit" name="op" value="multiply">*</button>
+        <button type="submit" name="op" value="divide">/</button>
+        <br><br>
+        <span>Result:</span>
+        <span>{{result}}</span>
+    </form>
+</body>
+
+</html>

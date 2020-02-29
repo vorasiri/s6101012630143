@@ -3,15 +3,16 @@
 
 <head>
     <h1>Calculator</h1>
+    <h4>POST method</h4>
 </head>
 
 <body>
-    <form action="{% url 'cal' %}" method="post">
+    <form action="{% url 'calPost' %}" method="POST">
         {% csrf_token %}
         <p>X</p>
-        <input type="number" name="x" id="x">
+        <input type="text" name="x" id="x">
         <p>Y</p>
-        <input type="number" name="y" id="y">
+        <input type="text" name="y" id="y">
         <br><br>
         <button type="submit" name="op" value="add">+</button>
         <button type="submit" name="op" value="subtract">-</button>
