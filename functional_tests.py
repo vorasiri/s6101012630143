@@ -12,11 +12,12 @@ def test_user_can_checkout_homepage(self):
     self.assertIn('About', [link.text for link in main.find_elements_by_tag_name('a')])
 
 def test_user_can_calculate_numbers(self):
-    
     browser.get('http://localhost:8000')
     time.sleep(30)
-    self.assertIn('Calculator POST method', [link.text for link in main.find_elements_by_tag_name('a')])
-    
+    # Go to Calculator POST method
+    calculatorPost = self.browser.find_element_by_id('calculatorPost')
+    self.assertTrue(calculatorPost)
+    calculatorPost.send_keys(Keys.ENTER)
     # Found x and y field
     variableX = self.browser.find_element_by_id('x')
     variableY = self.browser.find_element_by_id('y')
