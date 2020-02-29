@@ -21,5 +21,7 @@ from calculator import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.home, name='home'),
-    url(r'^cal/', views.cal, name='cal'),
+    url(r'^about.html', views.about, name='about'),
+    url(r'^calPost.html', views.calPost, name='calPost'),
+    url(r'^calGet.html', views.calGet, name='calGet'),
 ]

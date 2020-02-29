@@ -2,24 +2,13 @@
 <html>
 
 <head>
-    Calculator
+    <h1>HOME</h1>
 </head>
 
 <body>
-    <form action="{% url 'cal' %}"" method="post">
-        {% csrf_token %}
-        <p>X</p>
-        <input type="number" name="x" id="x">
-        <p>Y</p>
-        <input type="number" name="y" id="y"><br>
-
-        <input type="radio" name="add" id="add">ADD</input><br>
-        <input type="radio" name="minus" id="minus">MINUS</input><br>
-        <input type="radio" name="multiply" id="multiply">MULTIPLY</input><br>
-        <input type="radio" name="divide" id="divide">DIVIDE</input><br>
-
-        <input type="submit" value="CALCULATE">
-    </form>
+    <a href="calPost.html">Calculator POST method</a><br>
+    <a href="calGet.html">Calculator GET method</a><br>
+    <a href="about.html">About</a>
 </body>
 
 </html>

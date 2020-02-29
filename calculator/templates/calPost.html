@@ -1,0 +1,24 @@
+{% load static %}
+<html>
+
+<head>
+    Calculator
+</head>
+
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        <p>X</p>
+        <input type="number" name="x" id="x">
+        <p>Y</p>
+        <input type="number" name="y" id="y"><br><br>
+        <button type="submit" name="add" value="">+</button>
+        <button type="submit" name="minus" value="">-</button>
+        <button type="submit" name="multiply" value="">*</button>
+        <button type="submit" name="divide" value="">/</button>
+    </form>
+    <span>Result:</span>
+    <span>{{result}}</span>
+</body>
+
+</html>
